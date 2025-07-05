@@ -8,25 +8,20 @@
 ### DESCRIPTION ###
 ###################
 #
-# I needed a way to get a list of my GitHub repositories.
 # Credit to user 'kenorb' who posted an answer/response to a similar question on Stack Overflow
 # on October 15th, 2025 at 22:56.
 # I wanted to build a script around their contribution to make it user interactive, particularly
 # to edit the user variable.
 # Link to Stack Overflow question and answer: https://stackoverflow.com/questions/8713596/how-to-retrieve-the-list-of-all-github-repositories-of-a-person
-
 # This script has been tested on Python version 3.9.12.
 
 ################################
 ### FORMATTING AND VARIABLES ###
 ################################
 
-# Import the 're' module for regex.
+# Import the 're' module for regex and 'requests' module for API request
 
 import re
-
-# Import the 'requests' module for the API request.
-
 import requests
 
 # Colors

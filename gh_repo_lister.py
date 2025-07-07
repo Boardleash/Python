@@ -12,8 +12,9 @@
 # on October 15th, 2025 at 22:56.
 # I wanted to build a script around their contribution to make it user interactive, particularly
 # to edit the user variable.
-# Link to Stack Overflow question and answer: https://stackoverflow.com/questions/8713596/how-to-retrieve-the-list-of-all-github-repositories-of-a-person
-# This script has been tested on Python version 3.9.12.
+# Link to Stack Overflow question and answer:
+# https://stackoverflow.com/questions/8713596/how-to-retrieve-the-list-of-all-github-repositories-of-a-person
+# This script has been tested on Python version 3.9.12 and 3.13.5
 
 ################################
 ### FORMATTING AND VARIABLES ###
@@ -38,7 +39,7 @@ class clrs:
 
 def intro():
     print()
-    print(clrs.cyn+"Hello!  I can retrieve a list of Github repositories for a particular user.")
+    print(clrs.cyn+"Hello!  I can retrieve a list of public Github repositories for a particular user.")
     print("This does NOT clone, checkout or pull files or repositories from the user's GitHub!")
     print("This only provides a list of available repositores that the GitHub user has created.")
     print("I'll have to ask for the user, and, at the end, I'll ask if you wish to save the list.")

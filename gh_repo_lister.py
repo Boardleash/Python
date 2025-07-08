@@ -28,8 +28,8 @@ import requests
 # Colors
 
 class clrs:
-    cyn='\033[1;36m'
-    noc='\033[0m'
+    cyn = '\033[1;36m'
+    noc = '\033[0m'
 
 #####################
 ### INTRODUCTIONS ###
@@ -52,24 +52,24 @@ def intro():
 
 def meatnpotatoes():
     # Ask for the GitHub username and establish a variable for requesting from the GitHub API.
-    GITUSER=input("What is the GitHub username for the repositores you want to get a list of?: ")
-    DATA=requests.get("https://api.github.com/users/"+GITUSER+"/repos?")
+    GITUSER = input("What is the GitHub username for the repositores you want to get a list of?: ")
+    DATA = requests.get("https://api.github.com/users/"+GITUSER+"/repos?")
 
     # Set up a pattern to use for parsing the DATA variable.
-    PATTERN='git@[^"]*'
+    PATTERN = 'git@[^"]*'
 
     # Use the 're' module's 'findall' option to search the DATA variable for the pattern and store in 'SEARCH'.
-    SEARCH=re.findall(PATTERN, DATA.text)
+    SEARCH = re.findall(PATTERN, DATA.text)
 
     # Ask if the user wants to save a list for future reference.
-    ANSWER=input("Do you want to save this list for future reference? (Yes/No): ")
+    ANSWER = input("Do you want to save this list for future reference? (Yes/No): ")
 
     # If user answers 'yes' in one of the forms below, then print the repositories AND save them in a file in the current directory.
     if ANSWER == 'Y' or ANSWER == 'Yes' or ANSWER == 'y' or ANSWER == 'yes':
         print()
         for x in SEARCH:
             print(x)
-            FILE=open(GITUSER+"_GitHub_Repos", 'a+')
+            FILE = open(GITUSER+"_GitHub_Repos", 'a+')
             FILE.write(x+"\n")
             FILE.close()
         print()

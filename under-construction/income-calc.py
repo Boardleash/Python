@@ -1,5 +1,5 @@
 ##################################
-### TITLE: rent-calc.py        ###
+### TITLE: income-calc.py      ###
 ### AUTHOR: Boardleash (Derek) ###
 ### DATE: Monday, July 7 2025  ###
 ##################################
@@ -8,7 +8,7 @@
 ### DESCRIPTION ###
 ###################
 #
-# A simple Python rent calculator that will ask income questions and make
+# A simple Python income calculator that will ask basic income questions and make
 # income breakdown calculations based on those questions.
 # Tested on Python 3.13.5
 

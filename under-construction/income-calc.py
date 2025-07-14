@@ -16,10 +16,10 @@ print("Hello, I can perform some basic income calcualtions for you.")
 print("In order to do this, I will ask you two questions.  Please exclude commas from your input.")
 print("For example, rather than type 70,000.00, please type 70000.00.")
 try:
-  annual = float(input("What is your ANNUAL income?  If you do not know, enter '0': "))
-  hourly = float(input("What is your HOURLY income?  If you do not know, enter '0': "))
+    annual = float(input("What is your ANNUAL income?  If you do not know, enter '0': "))
+    hourly = float(input("What is your HOURLY income?  If you do not know, enter '0': "))
 except:
-  print("Input must be numerical.  Exiting now.")
+    print("Input must be numerical.  Exiting now.")
 else:
   if annual == 0 and hourly == 0:
     print("You have no income to calculate")

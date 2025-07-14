@@ -10,7 +10,7 @@
 #
 # A simple Python income calculator that will ask basic income questions and make
 # income breakdown calculations based on those questions.
-# Tested on Python 3.13.5
+# Tested on Python 3.12.10 and 3.13.5
 
 print("Hello, I can perform some basic income calcualtions for you.")
 print("In order to do this, I will ask you two questions.  Please exclude commas from your input.")

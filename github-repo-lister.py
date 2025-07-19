@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 ###########################################
 ### TITLE: github-repo-lister.py        ###
 ### AUTHOR: Boardleash (Derek)          ###
@@ -20,7 +22,7 @@
 ### FORMATTING AND VARIABLES ###
 ################################
 
-# Import the 're' module for regex and 'requests' module for API request
+# Import the 're' module for regex and 'requests' module for API request.
 
 import re
 import requests
@@ -28,6 +30,7 @@ import requests
 # Colors
 
 class clrs:
+    '''Class to hold color variables'''
     cyn = '\033[1;36m'
     noc = '\033[0m'
 
@@ -38,6 +41,7 @@ class clrs:
 # Set up an introduction to let user know what this script will do.
 
 def intro():
+    '''Introduction function that provides information and instruction'''
     print()
     print(clrs.cyn+"Hello!  I can retrieve a list of public Github repositories for a particular user.")
     print("This does NOT clone, checkout or pull files or repositories from the user's GitHub!")
@@ -51,20 +55,14 @@ def intro():
 #####################################
 
 def meatnpotatoes():
-    # Ask for the GitHub username and establish a variable for requesting from the GitHub API.
+    '''Ask for the GitHub username and establish a variable for requesting from the GitHub API.'''
     GITUSER = input("What is the GitHub username for the repositores you want to get a list of?: ")
     DATA = requests.get("https://api.github.com/users/"+GITUSER+"/repos?")
 
     # Set up a pattern to use for parsing the DATA variable.
     PATTERN = 'git@[^"]*'
-
-    # Use the 're' module's 'findall' option to search the DATA variable for the pattern and store in 'SEARCH'.
     SEARCH = re.findall(PATTERN, DATA.text)
-
-    # Ask if the user wants to save a list for future reference.
     ANSWER = input("Do you want to save this list for future reference? (Yes/No): ")
-
-    # If user answers 'yes' in one of the forms below, then print the repositories AND save them in a file in the current directory.
     if ANSWER == 'Y' or ANSWER == 'Yes' or ANSWER == 'y' or ANSWER == 'yes':
         print()
         for x in SEARCH:
@@ -75,8 +73,6 @@ def meatnpotatoes():
         print()
         print("The list of GitHub repositories for "+GITUSER+" has been saved in the current directory.")
         print()
-
-    # If user answers 'no' in one of the forms below, then print the repositories, but do NOT save them in a file.
     elif ANSWER == 'N' or ANSWER == 'No' or ANSWER == 'n' or ANSWER == 'no':
         print()
         for x in SEARCH:
@@ -84,12 +80,8 @@ def meatnpotatoes():
         print()
         print("The list of GitHub repositores for "+GITUSER+" will NOT be saved for future reference.")
         print()
-
-    # If the user answers 'quit' in one of the forms below, then exit out of the script.
     elif ANSWER == 'Q' or ANSWER == 'Quit' or ANSWER == 'q' or ANSWER == 'quit':
         exit
-
-    # If user enters an invalid response, let them know and start over.
     else:
         print("That is not an appropriate response.  Let's start over.")
         meatnpotatoes()
@@ -101,6 +93,7 @@ def meatnpotatoes():
 # Consolidate the two functions above into a main function.
 
 def main():
+    '''Main function that will execute the intro() and meatnpotatoes() functions'''
     intro()
     meatnpotatoes()
 

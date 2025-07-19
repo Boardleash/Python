@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 ##################################
 ### TITLE: income-calc.py      ###
 ### AUTHOR: Boardleash (Derek) ###
